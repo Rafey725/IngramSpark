@@ -47,3 +47,30 @@ input{
 .insta-bg:hover {
   background: linear-gradient(45deg, #f58529, #f97380, #dd2a7b, #8a3ab9, #5b51d8);
 }
+@keyframes scroll {
+  from{
+    transform: translateX(0);
+  }
+  to{
+    transform: translateX(-105%);
+  } 
+}
+
+.parallax-bg {
+  height: 60vh;
+  background-image: url('/self-publish-page-bg1.jpg');
+  background-size: contain;
+  background-position: 0 15%;
+  background-attachment: fixed;
+  /* MAGIC */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.content {
+  /* background: rgba(255, 255, 255, 0.8);
+  padding: 2rem 3rem;
+  border-radius: 12px;
+  backdrop-filter: blur(50px); */
+}

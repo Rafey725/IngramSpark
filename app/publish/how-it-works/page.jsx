@@ -66,7 +66,7 @@ const HowItWorks = () => {
                 </div>
             </div>
             {/* things can be done banner */}
-            <div className='max-w-[960px] w-full min-h-[300px] mx-auto my-15 px-10 flex justify-center flex-col items-center gap-10'>
+            <div className='max-w-[960px] w-full min-h-[300px] mx-auto my-15 px-5 sm:px-10 flex justify-center flex-col items-center gap-10'>
                 <h1 className='text-[25px] text-center sm:text-[30px] font-bold'>What You Can Do With IngramSpark</h1>
                 <div className='w-full flex flex-wrap md:flex-nowrap gap-7 justify-center'>
 
@@ -76,7 +76,7 @@ const HowItWorks = () => {
                                 <img src="/publish.webp" alt="image" className='object-cover' />
                             </div>
                             <h1 className='text-[22px] font-bold'>Publish</h1>
-                            <p className='text-[16px] w-[345px] md:max-w-[245px] text-center font-[sans-serif]'>Whether hardcover, paperback, or ebooks, you can publish your book the way you want, with the quality you need. Explore our publishing options and find what’s right for your book</p>
+                            <p className='text-[16px] max-w-[345px] md:max-w-[245px] text-center font-[sans-serif]'>Whether hardcover, paperback, or ebooks, you can publish your book the way you want, with the quality you need. Explore our publishing options and find what’s right for your book</p>
                         </div>
                         <button className='text-[16px] text-white w-45 h-10 mt-1 bg-[#4e9eb8] hover:bg-[#4e9eb8]/80 rounded-[7px] cursor-pointer transition duration-300'>Plan Your Book</button>
                     </div>
@@ -86,7 +86,7 @@ const HowItWorks = () => {
                                 <img src="/shipping.webp" alt="image" className='object-cover' />
                             </div>
                             <h1 className='text-[22px] font-bold'>Distribute</h1>
-                            <p className='text-[16px] w-[345px] md:max-w-[245px] text-center font-[sans-serif]'>IngramSpark offers global ebook and print distribution from one platform. Connect your book to over 45,000 libraries, retailers, and online stores like Amazon, Apple, and Barnes & Noble.</p>
+                            <p className='text-[16px] max-w-[345px] md:max-w-[245px] text-center font-[sans-serif]'>IngramSpark offers global ebook and print distribution from one platform. Connect your book to over 45,000 libraries, retailers, and online stores like Amazon, Apple, and Barnes & Noble.</p>
                         </div>
                         <button className='text-[16px] text-white w-45 h-10 mt-1 bg-[#4e9eb8] hover:bg-[#4e9eb8]/80 rounded-[7px] cursor-pointer transition duration-300'>Learn More</button>
                     </div>
@@ -96,7 +96,7 @@ const HowItWorks = () => {
                                 <img src="/learn-more.svg" alt="image" className='object-cover' />
                             </div>
                             <h1 className='text-[22px] font-bold'>Learn</h1>
-                            <p className='text-[16px] w-[345px] md:max-w-[245px] text-center font-[sans-serif]'>IngramSpark provides authors with free tools and resources to help you publish your book successfully. Explore our downloadable guides and worksheets, publishing courses, and weekly blog. </p>
+                            <p className='text-[16px] max-w-[345px] md:max-w-[245px] text-center font-[sans-serif]'>IngramSpark provides authors with free tools and resources to help you publish your book successfully. Explore our downloadable guides and worksheets, publishing courses, and weekly blog. </p>
                         </div>
                         <button className='text-[16px] text-white w-45 h-10 mt-1 bg-[#4e9eb8] hover:bg-[#4e9eb8]/80 rounded-[7px] cursor-pointer transition duration-300'>Start Learning</button>
                     </div>
@@ -104,23 +104,23 @@ const HowItWorks = () => {
             </div>
             {/* pricing banner */}
             <div className='h-auto md:h-[240px] w-full bg-[#fafafa] flex justify-center items-center'>
-                <div className='max-w-[1000px] w-full md:h-full flex mx-10 my-10 gap-5 flex-col-reverse md:flex-row justify-center items-center'>
-                    <div className='w-[80%] md:w-[50%] h-full flex flex-col items-center md:items-start justify-center'>
-                        <h1 className='text-[32px] font-bold text-[#4e9eb8] mb-2 text-center md:text-start'>See What It Costs To Publish With IngramSpark
+                <div className='md:max-w-[1000px] w-full md:h-full flex mx-3 md:mx-10 my-10 gap-5 flex-col-reverse md:flex-row justify-center items-center'>
+                    <div className='w-full md:w-[80%] md:w-[50%] h-full flex flex-col items-center md:items-start justify-center'>
+                        <h1 className='text-[clamp(20px,2.5vw,25px)] font-bold text-[#4e9eb8] mb-2 text-center md:text-start'>See What It Costs To Publish With IngramSpark
                         </h1>
                         <button className='mt-5 w-40 h-12 text-white bg-[#4e9eb8] hover:bg-[#4e9eb8]/80 rounded-lg text-[20px] font-medium font-[sans-serif] cursor-pointer'>Publish Today</button>
                     </div>
-                    <div className='w-[50%] h-full flex justify-center items-center'>
+                    <div className='w-full md:w-[50%] h-full flex justify-center items-center'>
                         <img src="/price-tag.webp" alt="image" className='w-[300px] h-[200px] ' />
                     </div>
                 </div>
             </div>
             {/* create account banner */}
             <div className='w-full flex flex-col justify-center items-center my-10'>
-                <h1 className='text-[32px] font-bold text-[#4e9eb8] mb-5'>It’s your content. Do more with it.
+                <h1 className='text-[clamp(20px,5vw,32px)] font-bold text-[#4e9eb8] mb-5'>It’s your content. Do more with it.
                 </h1>
-                <p className='text-[18px] md:text-[20px] lg:text-[22px]'>Publish on Demand® with IngramSpark</p>
-                <button className='mt-5 w-70 h-12 bg-[#eaac00] hover:bg-[#eaac00]/80 rounded-lg text-[20px] font-medium font-[sans-serif] cursor-pointer'>Create an Account Today</button>
+                <p className='sm:text-[18px] md:text-[20px] lg:text-[22px]'>Publish on Demand® with IngramSpark</p>
+                <button className='mt-5 px-2 sm:w-70 h-12 bg-[#eaac00] hover:bg-[#eaac00]/80 rounded-lg text-[20px] font-medium font-[sans-serif] cursor-pointer'>Create an Account Today</button>
             </div>
         </div>
     )

@@ -24,6 +24,10 @@ const nextConfig = {
         source: '/plan-your-book',
         destination: '/publish/plan-your-book',
       },
+      {
+        source: '/how-to-self-publish',
+        destination: '/publish/how-to-self-publish',
+      },
     ];
   },
 };
