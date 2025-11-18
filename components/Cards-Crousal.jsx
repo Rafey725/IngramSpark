@@ -74,13 +74,13 @@ const CardsCrousal = () => {
     }
   }
 
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     handleNext(); // just call handleNext(), don’t wrap in setCurrentSlide
-  //   }, 3000); // change slide every 3 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext(); // just call handleNext(), don’t wrap in setCurrentSlide
+    }, 3000); // change slide every 3 seconds
 
-  //   return () => clearInterval(interval); 
-  // }, [currentSlide])
+    return () => clearInterval(interval); 
+  }, [currentSlide])
 
   return (
     <div className='relative sm:h-[480px] w-full bg-[#f0fbfc] flex justify-center items-center gap-8 px-5'>

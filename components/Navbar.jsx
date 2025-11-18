@@ -38,7 +38,7 @@ const Navbar = () => {
     }, [hamburgerDrop])
 
     return (
-        <div className='relative flex lg:flex-col px-10 lg:px-0 w-full mx-auto'>
+        <div className='relative flex lg:flex-col px-5 lg:px-0 w-full mx-auto'>
             <div className='bg-white w-full flex justify-center h-[70px]'>
                 <div className='flex justify-between items-center lg:max-w-[76vw] w-full h-full'>
                     <div className='relative w-[210px] h-11'>

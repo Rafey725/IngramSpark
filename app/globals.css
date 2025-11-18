@@ -57,10 +57,10 @@ input{
 }
 
 .parallax-bg {
-  height: 60vh;
   background-image: url('/self-publish-page-bg1.jpg');
-  background-size: contain;
-  background-position: 0 15%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: 0 center;
   background-attachment: fixed;
   /* MAGIC */
   /* display: flex;
