@@ -1,6 +1,5 @@
 "use client"
 
-import { Istok_Web } from 'next/font/google'
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
 
@@ -18,6 +17,8 @@ const StickyBar = () => {
 
     console.log('render');
     useEffect(() => {
+        if (!stickyBox.current) return
+        originalOffset.current = stickyBox.current.offsetTop
         function handleScroll() {
             let scrollY = window.scrollY || window.pageYOffset
             if (scrollY >= originalOffset.current) {
@@ -26,8 +27,6 @@ const StickyBar = () => {
                 setIsSticky(false)
             }
         }
-        if (!stickyBox.current) return
-        originalOffset.current = stickyBox.current.offsetTop
 
         window.addEventListener('scroll', handleScroll)
         return () => {

@@ -1,7 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import React from 'react'
 
-const PublishHeroBanner = (props) => {
+type PublishHeroBannerProps = {
+    heading: string,
+    description: string,
+    image: string
+}
+
+const PublishHeroBanner = (props: PublishHeroBannerProps) => {
     return (
         <div className='h-auto md:h-[375px] w-full  bg-[#ecf8fd] flex justify-center items-center py-8'>
             <div className='max-w-[1170px] w-full h-full flex  mx-3 md:mx-10 gap-5 flex-col md:flex-row justify-center items-center'>

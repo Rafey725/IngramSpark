@@ -83,11 +83,11 @@ const CardsCrousal = () => {
   }, [currentSlide])
 
   return (
-    <div className='relative sm:h-[480px] w-full bg-[#f0fbfc] flex justify-center items-center gap-10 px-5'>
+    <div className='relative sm:h-[480px] w-full bg-[#f0fbfc] flex justify-center items-center sm:gap-10 px-5'>
       <button
         onClick={handlePrevious}
         onTouchStart={handlePrevious}
-        className='sm:absolute z-20 left-5 top-1/2 md:relative md:right-0 md:top-0 w-10 h-10 flex items-center justify-center border border-[#3a7c92] rounded-full cursor-pointer'>
+        className='absolute z-20 left-5 top-1/2 md:relative md:left-0 md:top-0 w-10 h-10 flex items-center justify-center border border-[#3a7c92] rounded-full cursor-pointer'>
         <img src="/arrow.svg" alt="arrow" className='w-full h-full block -rotate-90 ml-2.5' />
       </button>
 

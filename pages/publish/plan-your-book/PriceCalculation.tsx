@@ -4,7 +4,13 @@
 import React from 'react'
 import { useState, useRef } from 'react'
 
-const Container = (props) => {
+type ContainerProps = {
+    heading: string,
+    description: string,
+    image: string
+}
+
+const Container = (props: ContainerProps) => {
     return (
         <div className={`flex flex-col items-center px-3 md:gap-3 transition-all duration-500`}>
             <h1 className='text-[#4e9eb8] text-[clamp(20px,5vw,32px)] text-center font-bold'>{props.heading}</h1>
@@ -49,12 +55,14 @@ const Container = (props) => {
 
 const PriceCalculation = () => {
     const [priceContainer, setPriceContainer] = useState('novels')
-    const priceContRef = useRef(null)
+    const priceContRef = useRef<HTMLDivElement>(null)
 
-    function switchContainer(cont) {
+    function switchContainer(cont:string) {
+        if (!priceContRef.current) return
         priceContRef.current.style.transition = `none`
         priceContRef.current.style.transform = `translateX(100%)`
         setTimeout(() => {
+            if (!priceContRef.current) return
             priceContRef.current.style.transition = `transform 0.3s`
             priceContRef.current.style.transform = `translateX(0%)`
             setPriceContainer(cont)

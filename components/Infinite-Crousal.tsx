@@ -2,11 +2,12 @@
 import React from 'react'
 
 const InfiniteCrousal = () => {
-    let slides = [
+    let slides: string[] = [
         '/infinite-slider/slide.png',
         '/infinite-slider/slide.png',
         '/infinite-slider/slide.png'
     ]
+    
     return (
         <>
             <div className='max-w-screen h-[400px] flex overflow-hidden items-center'>

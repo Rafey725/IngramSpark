@@ -1,5 +1,6 @@
 import CardsCrousal from "@/components/Cards-Crousal"
 import InfiniteCrousal from "@/components/Infinite-Crousal"
+import React from "react"
 import Image from "next/image"
 
 async function home() {
