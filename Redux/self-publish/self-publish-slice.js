@@ -1,18 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
-    value: [
-        'benefits-to-publish',
-        '8steps-to-publish',
-        'costs-to-publish',
-        'pricing-your-book',
-        'author-salary',
-        'final-tips-to-publish',
-    ],
+    value: [],
 }
 
 export const selfPublishSlice = createSlice({
-    name: 'counter',
+    name: 'selfPublish',
     initialState,
     reducers: {
         handleScrollTo: (state, action) => {

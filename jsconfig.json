@@ -28,7 +28,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "components/ProvidedApp.jsx"
+    "components/ProvidedApp.jsx",
+    "app/store.js"
   ],
   "exclude": [
     "node_modules"

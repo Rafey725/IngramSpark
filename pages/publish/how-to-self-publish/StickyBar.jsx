@@ -2,11 +2,8 @@
 
 import React from 'react'
 import { useState, useRef, useEffect } from 'react'
-import { useDispatch } from 'react-redux'
-import { handleScrollTo } from '@/Redux/self-publish/self-publish-slice'
 
-const StickyBar = () => {
-    let disptach = useDispatch()
+const StickyBar = ({handleScrollToClick}) => {
 
     const [isTableContentsOpen, setIsTableContentsOpen] = useState(false)
 
@@ -17,9 +14,6 @@ const StickyBar = () => {
     const [isSticky, setIsSticky] = useState(false)
     const stickyBox = useRef(null)
     const originalOffset = useRef(0)
-
-
-    console.log('render');
     useEffect(() => {
         if (!stickyBox.current) return
         originalOffset.current = stickyBox.current.offsetTop
@@ -38,28 +32,41 @@ const StickyBar = () => {
         }
     }, [])
 
-    function handleScrollToClick(element) {
-        console.log(element);
-        
-        let scrollToEl = document.querySelector(element)
-        disptach(handleScrollTo(`#${scrollToEl}`))
-    }
-
     return (
         <>
             {/* sticky box */}
             <aside ref={stickyBox} className={`${isSticky ? 'fixed top-6 right-[5.5%] lg:right-[4%] xl:right-[10%] 2xl:right-[16.5%]' : ''} z-111 bg-white hidden md:block self-start border border-[#d0d5db87] p-5 max-w-[300px] rounded-[5px] shadow-[0_0px_10px_4px_rgba(0,0,0,0.05)]`}>
-                <h2 className="text-[#3a7c92] text-[16px] font-bold underline flex items-center gap-2 decoration-[#3a7c92] hover:decoration-white cursor-pointer">
-                    <span className="bg-[#ffc20d] h-4.5 w-[5px] inline-block"></span>
-                    <span>Introduction</span>
+                <h2
+                    id='self-publish-introduction-link'
+                     onClick={() => handleScrollToClick('self-publish-introduction')} className="text-[#3a7c92] text-[16px] font-bold underline flex h-[16px] pl-1 border-l-5 border-[#ffc20d] items-center gap-2 decoration-[#3a7c92] hover:decoration-white cursor-pointer ">
+                    {/* <span className="bg-[#ffc20d] h-4.5 w-[5px] inline-block"></span> */}
+                    <span className=''>Introduction</span>
                 </h2>
-                <ul className="text-[#4e9eb8] text-[16px]font-medium space-y-2 mt-4">
-                    <li onClick={() => handleScrollToClick('benefits-to-publish')} className="cursor-pointer underline hover:decoration-[#ace3f5]">Benefits of Self Publishing</li>
-                    <li onClick={() => handleScrollToClick('8steps-to-publish')} className="cursor-pointer underline hover:decoration-[#ace3f5]">8 Steps to Self-Publishing a Book</li>
-                    <li onClick={() => handleScrollToClick('costs-to-publish')} className="cursor-pointer underline hover:decoration-[#ace3f5]">How Much Does It Cost to Self-Publish a Book?</li>
-                    <li onClick={() => handleScrollToClick('pricing-your-book')} className="cursor-pointer underline hover:decoration-[#ace3f5]">Pricing Your Book</li>
-                    <li onClick={() => handleScrollToClick('author-salary')} className="cursor-pointer underline hover:decoration-[#ace3f5]">Author Salary</li>
-                    <li onClick={() => handleScrollToClick('final-tips-to-publish')} className="cursor-pointer underline hover:decoration-[#ace3f5]">Final Tips for Self-Publishing</li>
+                <ul className="text-[#4e9eb8] text-[16px] font-medium space-y-2 mt-4">
+                    <li 
+                    id='benefits-to-publish-link'
+                    onClick={() => handleScrollToClick('benefits-to-publish')}
+                     className="cursor-pointer underline hover:decoration-[#ace3f5]">Benefits of Self Publishing</li>
+                    <li 
+                    id='eight-steps-to-publish-link'
+                    onClick={() => handleScrollToClick('eight-steps-to-publish')}
+                     className="cursor-pointer underline hover:decoration-[#ace3f5]">8 Steps to Self-Publishing a Book</li>
+                    <li 
+                    id='costs-to-publish-link'
+                    onClick={() => handleScrollToClick('costs-to-publish')}
+                     className="cursor-pointer underline hover:decoration-[#ace3f5]">How Much Does It Cost to Self-Publish a Book?</li>
+                    <li 
+                    id='pricing-to-publish-link'
+                    onClick={() => handleScrollToClick('pricing-your-book')}
+                     className="cursor-pointer underline hover:decoration-[#ace3f5]">Pricing Your Book</li>
+                    <li 
+                    id='author-salary-link'
+                    onClick={() => handleScrollToClick('author-salary')}
+                     className="cursor-pointer underline hover:decoration-[#ace3f5]">Author Salary</li>
+                    <li 
+                    id='final-tips-to-publish-link'
+                    onClick={() => handleScrollToClick('final-tips-to-publish')}
+                     className="cursor-pointer underline hover:decoration-[#ace3f5]">Final Tips for Self-Publishing</li>
                 </ul>
             </aside>
 

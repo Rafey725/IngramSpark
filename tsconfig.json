@@ -38,7 +38,8 @@
     "**/*.ts",
     "**/*.tsx",
     "pages/publish/how-to-self-publish/8Steps-SelfPublish/SelfPublishingSteps.jsx",
-    "components/ProvidedApp.jsx"
+    "components/ProvidedApp.jsx",
+    "app/store.ts"
   ],
   "exclude": [
     "node_modules"

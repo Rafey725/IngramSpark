@@ -99,3 +99,12 @@ input {
   border-radius: 12px;
   backdrop-filter: blur(50px); */
 }
+
+.activeSectionLink {
+  font-weight: bold;
+  color: #3a7c92;
+  padding-left: 10px;
+  border-left: #ffc20d 5px solid;
+  margin-left: 5px;
+  padding-left: 4px;
+}

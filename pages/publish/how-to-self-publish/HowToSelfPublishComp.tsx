@@ -1,12 +1,22 @@
-import React from 'react'
+"use client"
+
+import React, { useEffect, useState } from 'react'
 import ProsList from './ProsList';
 import StickyBar from './StickyBar';
 import BgBanner from './BgBanner';
 import SelfPublishingSteps from './8Steps-SelfPublish/SelfPublishingSteps';
-import { useRef } from 'react';
-import ScrollIntoView from '@/components/ScrollIntoView'
 
 const HowToSelfPublish = () => {
+  let sectionIds: string[] = [
+    'self-publish-introduction',
+    'benefits-to-publish',
+    'eight-steps-to-publish',
+    'costs-to-publish',
+    'pricing-your-book',
+    'author-salary',
+    'final-tips-to-publish',]
+  const [activeSection, setActiveSection] = useState('')
+
   const prosList: { heading: string, description: string }[] = [
     {
       heading: "No Gatekeepers",
@@ -34,11 +44,43 @@ const HowToSelfPublish = () => {
     { before: 'How much ', bold: 'money', after: ' do authors make?' }
   ];
 
+  function handleScrollToClick(element: string) {
+    let scrollToEl = document.querySelector(`#${element}`)
+    scrollToEl?.scrollIntoView({ behavior: 'smooth' })
+  }
+  
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      { rootMargin: "-50% 0px -50% 0px" }
+    );
+
+    sectionIds.forEach(sectionId => {
+      let section = document.getElementById(sectionId)
+      if (section) observer.observe(section)
+    })
+    return () => observer.disconnect()
+  }, [])
+
+  useEffect(()=>{
+    let activeSectionEl = document.getElementById(activeSection+'-link')
+    if (activeSectionEl) {
+      activeSectionEl.classList.add('activeSectionLink');
+    }
+    console.log(activeSectionEl);
+  })
+
   return (
     <div>
-      <ScrollIntoView />
       {/* hero section */}
-      <div className="first-bg bg-[url('/self-publish-page-bg1.jpg')] max-w-screen max-h-screen h-[40vh] lg:h-[50vh] flex">
+      <div id='self-publish-introduction' className="first-bg bg-[url('/self-publish-page-bg1.jpg')] max-w-screen max-h-screen h-[40vh] lg:h-[50vh] flex">
         <div className="content w-full h-full flex flex-col items-center justify-center gap-6 px-4 py-4 text-center">
           <div className='max-w-[430px] md:max-w-[630px]'>
             <h1 className='text-[clamp(20px,5vw,42px)] leading-[clamp(10px,5vw,50px)] font-black text-[#4e9eb8]'>How to Self-Publish a Book: The Complete Guide to Publish Like a Pro</h1>
@@ -83,7 +125,7 @@ const HowToSelfPublish = () => {
           </div>
 
           {/* sticky section... */}
-          <StickyBar />
+          <StickyBar handleScrollToClick={handleScrollToClick} />
         </div>
 
         {/* benefits banner*/}
@@ -113,10 +155,10 @@ const HowToSelfPublish = () => {
         </div>
 
         {/* 8steps banner */}
-        <BgBanner id='8steps-ti-publish' bgImage="/self-publish-page-bg3.jpg" heading1="8 Steps to" heading2="Self-Publishing a Book" />
+        <BgBanner id='eight-steps-to-publish' bgImage="/self-publish-page-bg3.jpg" heading1="8 Steps to" heading2="Self-Publishing a Book" />
 
         {/* 8 steps to self-publishing a book */}
-        <SelfPublishingSteps/>
+        <SelfPublishingSteps />
 
         {/* costs to self publish */}
         <BgBanner id='costs-to-publish' bgImage='/self-publish-page-bg4.jpg' heading1='How Much Does It Cost to Self-Publish a Book?' />
