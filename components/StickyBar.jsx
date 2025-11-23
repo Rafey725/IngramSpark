@@ -37,7 +37,7 @@ const StickyBar = ({ handleScrollToClick, activeSection, allLinks }) => {
     return (
         <>
             {/* sticky box */}
-            <aside ref={stickyBox} className={` ${isSticky ? 'fixed top-6 right-[10%] xl:right-[14%]' : 'absolute top-[75%] right-[10%] xl:right-[14%]'} z-111 bg-white hidden md:block self-start border border-[#d0d5db87] p-5 max-w-[300px] rounded-[5px] shadow-[0_0px_10px_4px_rgba(0,0,0,0.05)]`}>
+            <aside ref={stickyBox} className={` ${isSticky ? 'fixed top-6 right-[10%] xl:right-[14%]' : 'absolute top-[75%] right-[10%] xl:right-[14%]'} z-111 bg-white hidden md:block self-start border border-[#d0d5db87] p-5 max-w-[280px] lg:max-w-[300px] rounded-[5px] shadow-[0_0px_10px_4px_rgba(0,0,0,0.05)]`}>
                 <ul id='publishLinks' className="text-[#4e9eb8] text-[16px] font-medium space-y-2 transition-all duration-100">
                     {allLinks.map(link => {
                         const getSubLinksClass = (link) => {
