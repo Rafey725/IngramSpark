@@ -10,8 +10,11 @@ const PlanYourBookComp = () => {
                   image="/plan-your-book-hero.webp"
                   heading="Publish Your Book with IngramSpark"
                   description="Print Books and Ebooks – All from One Platform"
+                  button={true}
+                  bgColor='#ecf8fd'
               />
               {/* learn more */}
+
               <div className='my-15'>
                   <div className='max-w-[1000px] w-full h-auto md:h-[380px] mx-auto flex flex-col items-center gap-y-7 md:flex-row justify-between'>
                       <div className='max-w-[440px] w-full h-full px-5 flex flex-col gap-6 justify-between'>

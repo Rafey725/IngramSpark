@@ -2,7 +2,7 @@ import React from 'react'
 
 const ImagesBanner = () => {
     return (
-        <div className='grid grid-cols-3'>
+        <div className='max-w-screen w-full grid grid-cols-3'>
             <div className=''>
                 <img src="/blog.webp" alt="image" className='hover:scale-105 transition duration-100 cursor-pointer' />
             </div>

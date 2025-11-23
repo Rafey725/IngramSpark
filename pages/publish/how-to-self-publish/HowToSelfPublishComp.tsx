@@ -2,14 +2,20 @@
 
 import React, { useEffect, useRef, useState } from 'react'
 import ProsList from './ProsList';
-import StickyBar from './StickyBar';
 import BgBanner from './BgBanner';
 import SelfPublishingSteps from './8Steps-SelfPublish/SelfPublishingSteps';
 import SelfPublishingCosts from './6Steps-Costs/SelfPublishingCosts';
 import Image from 'next/image';
 import PricingYourBook from './PricingYourBook';
+import AuthorSalary from './AuthorSalary';
+import FinalTips from './FinalTips';
+import { useSelector } from 'react-redux';
+import type { RootState } from "@/app/store";
+import StickyBar from '@/components/StickyBar';
 
 const HowToSelfPublish = () => {
+  let allLinks = useSelector((state: RootState) => state.selfPublish.value)
+
   let sectionIds: string[] = [
     'self-publish-introduction',
     'benefits-to-publish',
@@ -33,10 +39,7 @@ const HowToSelfPublish = () => {
     'author-salary',
     'final-tips-to-publish']
 
-  const [activeSection, setActiveSection] = useState('')
-  console.log(activeSection);
-
-
+  const [activeSection, setActiveSection] = useState('self-publish-introduction')
 
   const prosList: { heading: string, description: string }[] = [
     {
@@ -67,8 +70,6 @@ const HowToSelfPublish = () => {
 
   function handleScrollToClick(element: string) {
     let scrollToEl = document.getElementById(element)
-    console.log(scrollToEl);
-
     scrollToEl?.scrollIntoView({ behavior: 'smooth' })
   }
 
@@ -98,13 +99,15 @@ const HowToSelfPublish = () => {
     if (activeSectionEl) {
       // remove previous selected links
       let links = Array.from(document.getElementById('publishLinks')?.children || [])
-      let subPublishLinks = Array.from(document.getElementById('subPublishLinks')?.children || [])
-      let subCostsLinks = Array.from(document.getElementById('subCostsLinks')?.children || [])
+      let subPublishLinks = Array.from(document.getElementById('sub-eight-steps-to-publish-links')?.children || [])
+      let subCostsLinks = Array.from(document.getElementById('sub-costs-to-publish-links')?.children || [])
 
       let allLinks = [...links, ...subPublishLinks, ...subCostsLinks]
 
-      allLinks.forEach(link => {
-        link.classList.remove('activeSectionLink')
+      allLinks.forEach(link => {        
+        let title = link.querySelector(`span`)
+        title?.classList.remove('activeSectionLink')
+
       })
       // select the active link
       activeSectionEl.classList.add('activeSectionLink')
@@ -112,7 +115,7 @@ const HowToSelfPublish = () => {
   }, [activeSection])
 
   return (
-    <div>
+    <div className='overflow-x-hidden'>
       {/* hero section */}
       <div id='self-publish-introduction' className="first-bg bg-[url('/self-publish-page-bg1.jpg')] max-w-screen max-h-screen h-[40vh] lg:h-[50vh] flex">
         <div className="content w-full h-full flex flex-col items-center justify-center gap-6 px-4 py-4 text-center">
@@ -152,14 +155,14 @@ const HowToSelfPublish = () => {
                 Download the guide (with bonus content): How to Self-Publish a Book
               </p>
 
-              <button className="bg-[#ffca38] hover:bg-[#e99b0b] transition-all duration-300 cursor-pointer text-[18px] font-bold px-5 py-2 rounded shadow">
+              <button className="bg-[#ffca38] hover:bg-[#ffbb00] transition-all duration-300 cursor-pointer text-[18px] font-bold px-5 py-2 rounded shadow">
                 Download Now
               </button>
             </div>
           </div>
 
           {/* sticky section... */}
-          <StickyBar handleScrollToClick={handleScrollToClick} activeSection={activeSection} />
+          <StickyBar allLinks={allLinks} handleScrollToClick={handleScrollToClick} activeSection={activeSection} />
         </div>
 
         {/* benefits banner*/}
@@ -205,10 +208,15 @@ const HowToSelfPublish = () => {
         {/* pricing your book component */}
         <PricingYourBook />
 
-        {/* footer image */}
-        <div className='relative max-w-[78.125rem] w-full mx-auto h-100'>
-          <Image src='/self-publish-page-final-tips-image.jpg' alt='image' fill className='object-contain' />
-        </div>
+        {/* author salary banner*/}
+        <BgBanner id='author-salary' bgImage='/self-publish-page-bg6.jpg' heading1='Author Salary' />
+        {/* author salary component */}
+        <AuthorSalary />
+
+        {/* final tips to publish banner */}
+        <BgBanner id='final-tips-to-publish' bgImage='/self-publish-page-bg7.jpg' heading1='Final Tips for' heading2='Self-Publishing' />
+        {/* final tips to publish component */}
+        <FinalTips />
       </main>
     </div>
 

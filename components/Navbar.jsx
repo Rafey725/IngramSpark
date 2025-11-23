@@ -96,7 +96,7 @@ const Navbar = () => {
                             <Link href={"/how-to-self-publish"} className='w-full h-full inline-block'>How to Self-Publish</Link>
                         </li>
                         <li className='hover:bg-[#f6f6f6] w-full px-12 py-3 border-y border-black/10'>
-                            <Link href={"/plan-your-book"} className='w-full h-full inline-block'>How to Design a Book</Link>
+                            <Link href={"/how-to-design-book"} className='w-full h-full inline-block'>How to Design a Book</Link>
                         </li>
                         <li className='hover:bg-[#f6f6f6] w-full px-12 py-3 border-t border-black/10'>
                             <Link href={"/plan-your-book"} className='w-full h-full inline-block'>Book-Building Tool</Link>
@@ -190,7 +190,7 @@ const Navbar = () => {
                                     <li className='hover:bg-[#4e9eb8] w-full px-6 py-2.5 border-b border-[#4e9eb8]'>
                                         <Link href={"/how-to-self-publish"} className='w-full h-full inline-block'>How to Self-Publish</Link></li>
                                     <li className='hover:bg-[#4e9eb8] w-full px-6 py-2.5 border-b border-[#4e9eb8]'>
-                                        <Link href={"/plan-your-book"} className='w-full h-full inline-block'>How to Design a Book</Link></li>
+                                        <Link href={"/how-to-design-book"} className='w-full h-full inline-block'>How to Design a Book</Link></li>
                                     <li className='hover:bg-[#4e9eb8] w-full px-6 py-2.5'>
                                         <Link href={"/plan-your-book"} className='w-full h-full inline-block'>Book-Building Tool</Link></li>
                                 </ul>

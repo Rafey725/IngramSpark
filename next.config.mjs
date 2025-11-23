@@ -28,6 +28,10 @@ const nextConfig = {
         source: '/how-to-self-publish',
         destination: '/publish/how-to-self-publish',
       },
+      {
+        source: '/how-to-design-book',
+        destination: '/publish/how-to-design-book',
+      },
     ];
   },
 };

@@ -119,10 +119,10 @@ const CardsCrousal = () => {
               <div key={index}
                 className='shrink-0 my-5 w-full h-full flex flex-col-reverse md:flex-row md:justify-between items-center'>
                 <div className='w-full h-full flex flex-col items-center md:items-start'>
-                  <div className={`${index === 4 ? 'sm:max-w-[540px] md:w-[610px] px-3' : null}`}>
-                    <h1 className={`${index === 4 ? 'text-[clamp(20px,5vw,52px)] text-center text-wrap mx-3 sm:leading-10 md:leading-15 font-extrabold text-[#4e9eb8]' : 'text-[clamp(30px,5vw,108px)]'} font-extrabold text-[#4e9eb8]`}>{slide.heading}</h1>
+                  <div className={`${index === 4 ? 'sm:max-w-[540px] md:w-[610px] ' : null}`}>
+                    <h1 className={`${index === 4 ? 'text-[clamp(20px,5vw,52px)] text-center sm:text-start text-wrap sm:leading-10 md:leading-15 font-extrabold text-[#4e9eb8]' : 'text-[clamp(30px,5vw,108px)]'} font-extrabold text-[#4e9eb8]`}>{slide.heading}</h1>
                   </div>
-                  <div className={`${index === 4 ? 'w-[270px] sm:max-w-[540px] text-center ' : 'w-[270px]'}`}>
+                  <div className={`${index === 4 ? 'w-[270px] sm:max-w-[640px]' : ''}`}>
                     <p className='sm:text-[22px] text-center sm:text-start font-normal text-wrap'>{slide.description}</p>
                   </div>
                   <button className='w-[190px] sm:w-[220px] h-12 bg-[#febe10]/90 hover:bg-[#febe10] transition duration-100 rounded-[12px] mt-7 sm:text-[20px] font-medium cursor-pointer'>Get Started for Free</button>
@@ -138,10 +138,10 @@ const CardsCrousal = () => {
           <div className='shrink-0 my-5 w-full h-full flex flex-col-reverse md:flex-row md:justify-between items-center'>
             <div>
               <div className={``}>
-                <h1 className={`text-[clamp(30px,5vw,108px)] font-extrabold text-[#4e9eb8]`}>{slides[0].heading}</h1>
+                <h1 className={`text-[clamp(30px,5vw,108px)] text-center sm:text-start font-extrabold text-[#4e9eb8]`}>{slides[0].heading}</h1>
               </div>
-              <div className='w-[270px] w-full'>
-                <p className='sm:text-[22px] text-center font-normal text-wrap'>{slides[0].description}</p>
+              <div className='max-w-[640px] w-full'>
+                <p className='sm:text-[22px] text-center sm:text-start font-normal text-wrap'>{slides[0].description}</p>
               </div>
               <button className='w-[190px] sm:w-[220px] h-[48px] bg-[#febe10]/90 hover:bg-[#febe10] transition duration-100 rounded-[12px] mt-7 sm:text-[20px] font-medium cursor-pointer'>Get Started for Free</button>
             </div>

@@ -12,6 +12,8 @@ const HowItWorksComp = () => {
                     image="/how-it-works-hero.webp"
                     heading="Publish Like a Pro"
                     description="When you Publish on Demand® with IngramSpark, you get everything you need to successfully self-publish a book from one award-winning self-publishing company"
+                    button={false}
+                    bgColor='#ecf8fd'
                 />
                 {/* needs for publish banner */}
                 <div className='max-w-[600px] h-auto mx-auto my-10 px-7'>

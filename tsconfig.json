@@ -16,7 +16,7 @@
     "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "forceConsistentCasingInFileNames": true,
     "allowJs": true,
     "skipLibCheck": true,
@@ -32,6 +32,7 @@
   },
   "include": [
     "next-env.d.ts",
+    "types/**/*.d.ts",
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts",
@@ -40,7 +41,7 @@
     "pages/publish/how-to-self-publish/8Steps-SelfPublish/SelfPublishingSteps.jsx",
     "components/ProvidedApp.jsx",
     "app/store.ts"
-  ],
+, "components/StickyBar.jsx"  ],
   "exclude": [
     "node_modules"
   ]
