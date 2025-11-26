@@ -1,4 +1,5 @@
 import CardsCrousal from "@/components/Cards-Crousal"
+import AICrousal from '@/components/AICrousal'
 import InfiniteCrousal from "@/components/Infinite-Crousal"
 import React from "react"
 import Image from "next/image"
@@ -8,6 +9,7 @@ const HomeComp = () => {
         <>
             {/* crousal */}
             <CardsCrousal />
+            {/* <AICrousal /> */}
 
             {/* service cards */}
             <div className="w-full mt-15 mb-15">

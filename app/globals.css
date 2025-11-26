@@ -119,3 +119,13 @@ input {
   color: #4e9eb8;
   /* <-- this uses the CSS variable */
 }
+
+.btnYellow {
+  background-color: #febe10;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btnYellow:hover {
+  background-color: #f3b200;
+}

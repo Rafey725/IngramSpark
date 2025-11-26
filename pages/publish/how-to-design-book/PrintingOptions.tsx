@@ -162,8 +162,8 @@ const PrintingOptions = () => {
 
     // testimonials click logic...
     function handleSwitchSlide(slideNum: number) {
-        setPrevTranslated(slideNum);
         if (intervalRef.current) clearInterval(intervalRef.current)
+        setPrevTranslated(slideNum);
         startInterval()
     }
 
