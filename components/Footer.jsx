@@ -3,8 +3,8 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <div className='max-w-screen w-full h-auto sm:h-[580px] bg-[#444546] text-white flex justify-between items-center gap-10 flex-col px-10 py-5 border-t'>
-      <div className='w-[350px] sm:max-w-[1090px] sm:w-full h-auto sm:h-[380px] flex justify-between flex-col sm:flex-row gap-10'>
+    <div className='max-w-screen w-full h-auto sm:h-[580px] bg-[#444546] text-white flex justify-between items-center gap-10 flex-col px-1 sm:px-10 py-5 border-t'>
+      <div className='max-w-[350px] sm:max-w-[1090px] sm:w-full h-auto sm:h-[380px] flex justify-between flex-col sm:flex-row gap-10'>
         {/* form */}
         <div className='sm:max-w-[305px] w-full h-auto px-2'>
           <form className='w-full h-full flex flex-col gap-2'>
@@ -94,7 +94,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='h-full w-full flex items-center justify-center'>
+      <div className='h-full w-full flex items-center justify-center px-2'>
         <div className='sm:max-w-[1090px] w-full h-full flex flex-col sm:flex-row gap-4 justify-between items-center sm:items-start border-t border-white/80 pt-5 px-5'>
           <div className="flex items-center justify-between gap-1.5">
             {/* facebook */}

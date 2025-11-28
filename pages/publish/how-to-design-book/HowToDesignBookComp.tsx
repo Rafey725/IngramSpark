@@ -11,6 +11,8 @@ import { useSelector } from 'react-redux'
 import type { RootState } from '@/app/store'
 import PrintingOptions from './PrintingOptions'
 import BookFormats from './BookFormats'
+import TrimSize from './TrimSize'
+import CoverDesignBasics from './CoverDesignBasics'
 
 const HowToSelfDesignBookComp = () => {
     const listItems = [
@@ -164,9 +166,40 @@ const HowToSelfDesignBookComp = () => {
                 description={
                     <>
                         We highly recommend that you publish in all formats—ebook, paperback, and hardcover. In this section, we’ll talk about print books vs. ebooks, the difference between paperback and hardcover, and the pros of publishing hardcover books.
-                    </>} />
+                    </>}
+            />
             {/* book formats content */}
             <BookFormats />
+
+            {/* trim size  */}
+            <BgBanner
+                id='trim-size'
+                image='/how-to-design-book/banner-image3.webp'
+                heading='Picking Your Book’s Trim Size'
+                description={
+                    <>
+                        This might seem like a last-minute decision, but your trim size impacts the page count, weight, and overall look and feel of your book—and before you begin your book layout design, you’ll want to choose your book’s trim size.
+                    </>}
+            />
+            {/* trim size content */}
+            <TrimSize />
+
+            {/* Cover design basics */}
+            <BgBanner
+                id='cover-design-basics'
+                image='/how-to-design-book/banner-image4.webp'
+                heading='The Basics of Book Cover Design'
+                description={
+                    <>
+                        There are several things to consider when you design the cover of your book. Let’s start with some
+                        <Link href={"/"} className='text-[#3a7c92] underline hover:text-[#4e9eb8] font-bold'>
+                            book cover design basics.
+                        </Link>
+                    </>}
+            />
+            {/* Cover design basics content */}
+            <CoverDesignBasics />
+
         </>
     )
 }

@@ -1,6 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable @next/next/no-img-element */
 "use client"
+import Image from 'next/image'
 import React from 'react'
 import { useState, useRef } from 'react'
 
@@ -18,7 +19,9 @@ const Container = (props: ContainerProps) => {
             <div className='w-full h-full md:px-3 md:my-10 flex flex-col md:flex-row justify-between items-center md:gap-5'>
                 {/* Image */}
                 <div className='w-full md:w-[70%]'>
-                    <img src={props.image} alt="image" className='w-full h-[300px] mx-auto object-contain' />
+                    <div className='relative w-full h-[300px] mx-auto '>
+                        <Image src={props.image} alt="image" fill className='object-contain' />
+                    </div>
                 </div>
                 {/* Pricing */}
                 <div className='w-[80%] md:w-[30%] flex flex-col items-center md:items-start'>
@@ -57,7 +60,7 @@ const PriceCalculation = () => {
     const [priceContainer, setPriceContainer] = useState('novels')
     const priceContRef = useRef<HTMLDivElement>(null)
 
-    function switchContainer(cont:string) {
+    function switchContainer(cont: string) {
         if (!priceContRef.current) return
         priceContRef.current.style.transition = `none`
         priceContRef.current.style.transform = `translateX(100%)`
@@ -115,12 +118,12 @@ const PriceCalculation = () => {
                                     <Container
                                         heading="What Does the Average Business Book Look Like?"
                                         description="Check out the most commonly used specifications for business & health books published through IngamSpark."
-                                        image="/childrens-book.webp" /> :
+                                        image="/business-health-book.webp" /> :
                                     // Graphic Novels
                                     <Container
                                         heading="What Does the Average Graphic Novel Look Like?"
                                         description="Check out the most commonly used specifications for graphic novels published through IngamSpark."
-                                        image="/average-novel.webp" />
+                                        image="/graphic-novel.webp" />
                         }
                     </div>
                 </div>

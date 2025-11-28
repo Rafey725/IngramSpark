@@ -1,6 +1,7 @@
 import React from 'react'
 import PublishHeroBanner from '@/components/PublishHeroBanner';
 import PriceCalculation from './PriceCalculation';
+import Image from 'next/image';
 
 const PlanYourBookComp = () => {
     return (
@@ -79,15 +80,15 @@ const PlanYourBookComp = () => {
             </div>
             {/* publishing banner */}
             <div className='h-auto md:h-[240px] my-10 w-full flex justify-center items-center'>
-                <div className='md:max-w-[1000px] w-full md:h-full flex mx-10 my-10 gap-5 flex-col md:flex-row justify-center items-center'>
-                    <div className='w-full h-full flex justify-center items-center'>
-                        <img src="/publish-tag.webp" alt="image" className='shrink-0 w-[300px] h-[200px] object-contain' />
-                    </div>
+                <div className='md:max-w-[1000px] w-full md:h-full flex mx-10 my-10 gap-5 flex-col md:flex-row justify-center md:justify-between items-center'>
                     <div className='w-[80%] md:w-[50%] h-full flex flex-col items-center md:items-start justify-center'>
                         <h1 className='text-[clamp(20px,5vw,32px)] font-bold leading-[clamp(25px,7vw,40px)] text-[#4e9eb8] mb-2 text-center md:text-start'>Publishing Doesn’t Have to Be Print Books VS Ebooks
                         </h1>
                         <p className='text-[#666]'><b>Think Print Books AND Ebooks.</b> Reach readers how they like to read by offering your book in more than one format!</p>
                     </div>
+                        <div className='relative w-[300px] h-[200px] '>
+                            <Image src="/publish-tag.webp" alt="image" fill className='shrink-0 object-contain' />
+                        </div>
                 </div>
             </div>
             {/* get started banner */}

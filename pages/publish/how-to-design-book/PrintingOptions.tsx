@@ -169,13 +169,13 @@ const PrintingOptions = () => {
 
 
     return (
-        // <div className='max-w-[78.125rem] flex flex-col items-start md:gap-4 xl:gap-7 mx-auto my-12 px-5 md:px-10 overflow-x-auto'>
-        <div className="max-w-[765px] md:max-w-195 md:w-[clamp(20rem,50vw,48.75rem)] py-6 px-5 md:px-10">
+        <div className='max-w-[78.125rem] flex flex-col items-start md:gap-4 xl:gap-7 mx-auto my-12 px-0 md:px-10 overflow-x-hidden'>
+            <div className="max-w-[765px] w-full md:max-w-[48.75rem] md:w-[clamp(20rem,50vw,48.75rem)] py-6 px-4 sm:px-6 md:px-10 box-border">
                 {/* outside the book */}
                 <div>
                     <h1 className='text-[clamp(24px,2.5vw,29px)] font-bold'>Outside the Book</h1>
                     {/* seperator */}
-                    <div className='w-30 h-1 bg-[#4393b8] my-3' />
+                    <div className='max-w-30 h-1 bg-[#4393b8] my-3' />
                     <div className='flex flex-wrap space-y-3 sm:grid grid-cols-2 xl:grid-cols-3 gap-4'>
                         {outSideOfBook.map((item, idx) => {
                             return (
@@ -184,7 +184,7 @@ const PrintingOptions = () => {
                                         <Image src={item.image} alt='image' fill className='object-contain' />
                                     </div>
                                     <h2 className='text-[clamp(19px,2.5vw,21px)] text-[#4e9eb8] font-bold'>{item.title}</h2>
-                                    <ul className='text-[#666] text-[1rem] space-y-2'>
+                                    <ul className='text-[#666] text-[1rem] space-y-2 w-fit'>
                                         {item.types.map((type, idx) => {
                                             return (
                                                 <li key={idx}>
@@ -201,14 +201,14 @@ const PrintingOptions = () => {
                 </div>
 
                 {/* inside the book */}
-                <div className='text-[#666]'>
+                <div className='text-[#666] py-10'>
                     <h1 className='text-[clamp(24px,2.5vw,29px)] font-bold'>Inside the Book</h1>
                     {/* seperator */}
-                    <div className='w-30 h-1 bg-[#4393b8] my-3' />
+                    <div className='max-w-30 h-1 bg-[#4393b8] my-3' />
                     {/* ink qualities */}
                     <div>
                         <h2 className='text-[clamp(21px,2.5vw,26px)] text-[#4e9eb8] font-bold'>Ink Qualities</h2>
-                        <div className='flex justify-between items-center lg:items-start flex-col lg:flex-row gap-x-27 gap-y-15 mb-10'>
+                        <div className='flex justify-between items-center lg:items-start flex-col lg:flex-row lg:gap-x-27 gap-y-15 mb-10'>
                             <ul className='flex flex-col items-start w-full'>
                                 {inkQualities.map((quality, idx) => {
                                     return (
@@ -285,7 +285,7 @@ const PrintingOptions = () => {
                     </div>
                 </div>
             </div>
-        // </div>
+        </div>
     )
 }
 
