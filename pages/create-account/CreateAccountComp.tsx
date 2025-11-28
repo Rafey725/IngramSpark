@@ -1,14 +1,24 @@
+"use client"
+
 import React from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
 const CreateAccountComp = () => {
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault()
+    let form = new FormData(e.currentTarget)
+    let data = Object.fromEntries(form)
+    alert("Hi " + data.firstName + data.lastName + ", your email is " + data.email + " with password:" + data.password);
+    e.currentTarget.submit()
+  }
   return (
     <div className='max-w-screen w-full h-[92vh] md:h-screen flex box-border overflow-hidden'>
       {/* left side */}
-      <div className='relative w-full md:w-[41.5%] h-full flex flex-col justify-between'>
-        <div className='w-full flex-1 flex justify-center pt-15'>
-          <div>
+      <div className='relative w-full md:w-[41.5%] h-full bg-[url(/createaccount-bg.jpg)] bg-cover md:bg-none flex flex-col justify-between'>
+        <div className='w-full flex-1 flex justify-center bg-white/30 pt-5 overflow-y-auto'>
+          <div className='h-fit w-fit rounded-xl my-10'>
             {/* logo */}
             <Link href={"/"}>
               <div className='relative w-65 h-14 mb-5 mx-auto'>
@@ -16,7 +26,8 @@ const CreateAccountComp = () => {
               </div>
             </Link>
             <h2 className='text-[24px] font-semibold text-[#535a62] mb-4 text-center'>Create Account</h2>
-            <form className="flex flex-col items-center w-full max-w-xs mx-auto p-4">
+            {/* form */}
+            <form className="flex flex-col items-center w-full max-w-xs mx-auto p-4" onSubmit={handleSubmit}>
               {/* First Name */}
               <div className="mb-4 w-full">
                 <label className="block mb-1 text-[14px] text-[#535a62] font-semibold" htmlFor="firstName">
@@ -25,8 +36,9 @@ const CreateAccountComp = () => {
                 <input
                   type="text"
                   id="firstName"
+                  name='firstName'
                   required
-                  className="w-full border border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                  className="w-full border border-white/50 md:border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                 />
               </div>
 
@@ -38,8 +50,9 @@ const CreateAccountComp = () => {
                 <input
                   type="text"
                   id="lastName"
+                  name="lastName"
                   required
-                  className="w-full border border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                  className="w-full border border-white/50 md:border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                 />
               </div>
 
@@ -51,8 +64,9 @@ const CreateAccountComp = () => {
                 <input
                   type="email"
                   id="email"
+                  name="email"
                   required
-                  className="w-full border border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                  className="w-full border border-white/50 md:border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                 />
               </div>
 
@@ -64,8 +78,9 @@ const CreateAccountComp = () => {
                 <input
                   type="password"
                   id="password"
+                  name="password"
                   required
-                  className="w-full border border-gray-300 px-3 py-1.5 bg-[#f5f5f5] text-[#535a62] rounded focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                  className="w-full border border-white/50 md:border-gray-300 px-3 py-1.5 bg-[#f5f5f593] md:bg-[#f5f5f5] text-[#535a62] rounded focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                 />
               </div>
 
@@ -77,16 +92,17 @@ const CreateAccountComp = () => {
                 <input
                   type="password"
                   id="confirmPassword"
+                  name="confirmPassword"
                   required
-                  className="w-full border border-gray-300 px-3 py-1.5 bg-[#f5f5f5] text-[#535a62] rounded focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                  className="w-full border border-white/50 md:border-gray-300 px-3 py-1.5 bg-[#f5f5f593] md:bg-[#f5f5f5] text-[#535a62] rounded focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                 />
               </div>
 
               {/* Checkboxes */}
-              <div className="flex flex-col gap-3 mb-4 w-full text-[13px] text-[#535a62]">
+              <div className="flex flex-col gap-3 mb-4 w-full text-[14px] text-[#535a62]">
                 <label className="flex items-start gap-2 cursor-pointer">
                   <input type="checkbox" className="mt-1" />
-                  <span>I want to receive promotional emails from IngramSpark</span>
+                  <span>I want to receive promotional emails from IngramPublishers</span>
                 </label>
 
                 <label className="flex items-start gap-2 cursor-pointer">
@@ -106,6 +122,9 @@ const CreateAccountComp = () => {
                 Create Account
               </button>
             </form>
+            <p className='text-xs text-center'>Already have an account? {" "}
+              <Link href="/login" className="text-[#3a7c92] hover:text-[#244e5b] hover:underline ">Login</Link>
+            </p>
           </div>
 
         </div>
@@ -120,8 +139,89 @@ const CreateAccountComp = () => {
         </footer>
       </div>
       {/* right side */}
-      <div className='hidden md:flex w-[58.5%] min-h-screen bg-[url(/createaccount-bg.jpg)] bg-cover bg-no-repeat'>
+      <div className='hidden md:flex w-[58.5%] h-screen bg-[url(/createaccount-bg.jpg)] bg-center bg-cover bg-no-repeat text-white items-center'>
+        <div className='max-w-196 space-y-6 px-5 lg:px-15 xl:px-23'>
+          <h1 className='text-[44px] font-bold leading-12'>
+            Why IngramPublishers?
+          </h1>
+          <ul className='grid grid-cols-2 grid-rows-3 gap-y-13 gap-x-1 lg:gap-x-4'>
+            <li className='flex gap-3'>
+              <div className='relative w-21 h-14'>
+                <Image src="/login-page-formats.svg" alt='image' fill className='object-contain' />
+              </div>
+              <div>
+                <h2 className='text-[18px] font-bold'>
+                  Most Popular Formats
+                </h2>
+                <p className='text-[14px]'>
+                  Hardcovers, paperbacks, and ebooks in color or black and white.
+                </p>
+              </div>
+            </li>
 
+            <li className='flex gap-3'>
+              <div className='relative w-21 h-14'>
+                <Image src="/login-page-education.svg" alt='image' fill className='object-contain' />
+              </div>
+              <div>
+                <h2 className='text-[18px] font-bold'>
+                  Free Publisher Education
+                </h2>
+                <p className='text-[14px]'>
+                  Don’t just publish. Learn how to publish successfully.
+                </p>
+              </div>
+            </li>
+
+            <li className='flex gap-3'>
+              <div className='relative w-21 h-14'>
+                <Image src="/login-page-print.svg" alt='image' fill className='object-contain' />
+              </div>
+              <div>
+                <h2 className='text-[18px] font-bold'>
+                  Print on Demand
+                </h2>
+                <p className='text-[14px]'>
+                  One book or thousands — print what you need and nothing more.
+                </p>
+              </div>
+            </li>
+            <li className='flex gap-3'>
+              <div className='relative w-35 h-14'>
+                <Image src="/login-page-experts.svg" alt='image' fill className='object-contain' />
+              </div>
+              <div>
+                <h2 className='text-[18px] font-bold'>
+                  Access to Experts
+                </h2>
+                <p className='text-[14px]'>
+                  Phone, email, and chat support as well as discounts with editors, designers, and more.
+                </p>
+              </div>
+            </li>
+
+            <li className='flex gap-3'>
+              <div className='relative w-21 h-14'>
+                <Image src="/login-page-distribution.svg" alt='image' fill className='object-contain' />
+              </div>
+              <div>
+                <h2 className='text-[18px] font-bold'>
+                  Global Distribution
+                </h2>
+                <p className='text-[14px]'>
+                  One platform for all your print and ebook distribution needs worldwide.
+                </p>
+              </div>
+            </li>
+            <div className='flex justify-center items-center'>
+              <button className='px-5 py-1.5 rounded-lg bg-white hover:bg-white/80 cursor-pointer text-[#3a7c92] mt-4 transition-all duration-300'>
+                <Link href={"#"}>
+                  Learn More
+                </Link>
+              </button>
+            </div>
+          </ul>
+        </div>
       </div>
     </div>
   )

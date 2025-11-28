@@ -5,8 +5,6 @@ import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
 
 const LoginComp = () => {
-  const emailRef = useRef<HTMLInputElement>(null)
-  const passwordRef = useRef<HTMLInputElement>(null)
   const [showPass, setShowPass] = useState(false)
 
   function handleShowPassword() {
@@ -15,17 +13,18 @@ const LoginComp = () => {
 
   function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    if (!emailRef.current || !passwordRef.current) return
-    console.log('Email:', emailRef?.current.value);
-    console.log('Password:', passwordRef?.current.value);
+    let form = new FormData(e.currentTarget)
+    let data = Object.fromEntries(form)
+    alert("Hi, your email is " + data.email + " with password:" + data.password);
+    e.currentTarget.submit()
   }
+
   return (
     <div className='max-w-screen w-full h-[92vh] md:h-screen flex box-border'>
       {/* left side */}
-      <div className='relative w-full md:w-[41.5%] h-full bg-[url(/login-bg.jpg)] bg-center md:bg-none flex flex-col justify-between items-center pt-15 md:pt-0'>
-
-        <div className='w-full flex-1 mx-3 flex md:pt-30 justify-center'>
-          <div className='h-fit flex flex-col items-center py-5 px-2 sm:px-5 rounded-xl bg-white/30 md:bg-none'>
+      <div className='relative w-full md:w-[41.5%] h-full bg-[url(/login-bg.jpg)] bg-center md:bg-none flex flex-col justify-between items-center md:pt-0'>
+        <div className='w-full flex-1 mx-3 flex pt-10 md:pt-30 justify-center bg-white/30 md:bg-none'>
+          <div className='h-fit flex flex-col items-center py-5 px-2 sm:px-5 rounded-xl'>
             {/* logo */}
             <Link href={"/"}>
               <div className='relative w-65 h-14 mb-5'>
@@ -42,9 +41,9 @@ const LoginComp = () => {
                 <input
                   type="email"
                   id="email"
-                  ref={emailRef}
+                  name="email"
                   required
-                  className="w-[278px] sm:w-[290px] border border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                  className="w-[278px] sm:w-[290px] border border-gray-300 px-3 py-1.5 text-[#535a62] rounded focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                 />
               </div>
 
@@ -56,9 +55,9 @@ const LoginComp = () => {
                   <input
                     type={showPass ? "text" : "password"}
                     id="password"
-                    ref={passwordRef}
+                    name="password"
                     required
-                    className="relative z-10 w-[235px] sm:w-[247px] border border-gray-300 bg-[#f5f5f5] px-3 py-1.5 text-[#535a62] rounded-tl rounded-bl focus:outline-none focus:ring-2 focus:ring-[#3a7c92]"
+                    className="relative z-10 w-[235px] sm:w-[247px] border border-white/50 md:border-gray-300 px-3 py-1.5 bg-[#f5f5f593] md:bg-[#f5f5f5] text-[#535a62] rounded-tl rounded-bl focus:outline-none focus:border-transparent focus:ring-2 focus:ring-[#3a7c92]"
                   />
                   <div className='border-t border-b border-r rounded-tr rounded-br border-gray-300 h-9.5 px-3 flex items-center'>
                     <button
@@ -91,7 +90,7 @@ const LoginComp = () => {
 
               <p className="text-center mt-4 text-xs text-[#535a62]">
                 Need an IngramSpark account?{" "}
-                <Link href="#" className="text-[#3a7c92]">
+                <Link href="/create-account" className="text-[#3a7c92] hover:text-[#244e5b] hover:underline text-sm">
                   Create Account
                 </Link>
               </p>
@@ -109,10 +108,10 @@ const LoginComp = () => {
       </div>
 
       {/* right side */}
-      <div className='hidden md:flex w-[58.5%] h-screen bg-[url(/login-bg.jpg)] bg-center text-white items-center pl-23'>
+      <div className='hidden md:flex w-[58.5%] h-screen bg-[url(/login-bg.jpg)] bg-center text-white items-center pl-10 lg:pl-23'>
         <div className='max-w-78 space-y-6'>
           <h1 className='text-[44px] font-bold leading-12'>
-            New to IngramSpark?
+            New to IngramPublishers?
           </h1>
           <ul className='space-y-10'>
             <li className='flex gap-3'>

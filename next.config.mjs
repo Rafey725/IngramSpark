@@ -32,6 +32,10 @@ const nextConfig = {
         source: '/how-to-design-book',
         destination: '/publish/how-to-design-book',
       },
+      {
+        source: '/book-building-tool',
+        destination: '/publish/book-building-tool',
+      },
     ];
   },
 };
