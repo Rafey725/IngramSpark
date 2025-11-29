@@ -129,3 +129,13 @@ input {
 .btnYellow:hover {
   background-color: #f3b200;
 }
+
+.curator-image{
+  background-image: url("/powered-by-curator.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.curator-image:hover{
+  /* background-image: none; */}

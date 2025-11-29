@@ -1,5 +1,6 @@
 "use client"
 import Image from 'next/image'
+import Link from 'next/link'
 /* eslint-disable @next/next/no-img-element */
 import React, { useRef, useState, useEffect } from 'react'
 
@@ -10,34 +11,39 @@ const CardsCrousal = () => {
       description: 'Hardcover and paperback books created on demand.',
       image: '/slides/slide5.svg',
       w: 590,
-      h: 370
+      h: 370,
+      gotoLink: "/"
     },
     {
       heading: 'Sell',
       description: 'Reach millions of readers around the world.',
       image: '/slides/slide4.svg',
       w: 590,
-      h: 370
+      h: 370,
+      gotoLink: "/"
     },
     {
       heading: 'Promote',
       description: 'Book marketing services',
       image: '/slides/slide3.svg',
       w: 590,
-      h: 370
+      h: 370,
+      gotoLink: "/"
     }, {
       heading: 'Publish',
       description: 'Create your print and ebook with professional quality.',
       image: '/slides/slide2.svg',
       w: 590,
-      h: 370
+      h: 370,
+      gotoLink: "/how-it-works"
     },
     {
       heading: 'You Have a Story. Share It with the World.',
       description: 'Everything you need to publish, print, promote and sell your book to millions of readers.',
       image: '/slides/slide1.webp',
       w: 360,
-      h: 400
+      h: 400,
+      gotoLink: "/login"
     },
   ]
   const [currentSlide, setCurrentSlide] = useState(1)
@@ -125,7 +131,9 @@ const CardsCrousal = () => {
                   <div className={`sm:max-w-[540px]`}>
                     <p className='sm:text-[clamp(18px,1.5vw,22px)] sm:leading-[clamp(20px,2.5vw,30px)] text-center md:text-start font-normal text-wrap'>{slide.description}</p>
                   </div>
-                  <button className='w-[190px] sm:w-[220px] h-12 bg-[#febe10]/90 hover:bg-[#febe10] transition duration-100 rounded-[12px] mt-7 sm:text-[20px] font-medium cursor-pointer'>Get Started for Free</button>
+                  <button className='w-[190px] sm:w-[220px] h-12 bg-[#febe10]/90 hover:bg-[#febe10] transition duration-100 rounded-[12px] mt-7 sm:text-[20px] font-medium cursor-pointer'>
+                    <Link href={`${slide.gotoLink ? slide.gotoLink : '/'}`}>Get Started for Free</Link>
+                  </button>
                 </div>
                 <div className='relative shrink-0 w-[320px] sm:w-[clamp(360px,25vw,480px)] h-90'>
                   <Image src={slide.image} alt='image' fill className='object-contain' />

@@ -169,8 +169,8 @@ const HowToSelfPublish = () => {
         <BgBanner id='benefits-to-publish' bgImage="/self-publish-page-bg2.jpg" heading1="Benefits of Self-" heading2="Publishing" />
 
         {/* pros of self publishing */}
-        <div className='max-w-[1250px] flex justify-start mx-auto my-12 sm:px-5 md:px-10'>
-          <div className="max-w-[780px] md:w-[clamp(26.25rem,16vw,37rem)] lg:w-[620px] xl:w-[780px] px-5 py-6">
+        <div className='max-w-[1250px] flex justify-start mx-auto my-12 px-3 sm:px-5 md:px-10'>
+          <div className="max-w-[780px] md:w-[clamp(26.25rem,16vw,37rem)] lg:w-[620px] xl:w-[780px] py-6">
             {/* heading */}
             <h1 className="text-[20px] sm:text-[24px] md:text-[20px] xl:text-[30px] font-bold mb-3">
               There are so many <span className="text-[#4e9eb8] underline">pros of self-publishing</span> a book.

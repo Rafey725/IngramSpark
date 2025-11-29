@@ -22,7 +22,7 @@ const PricingYourBook = () => {
         </h2>
         <p className='text-[clamp(1rem,2.5vw,1.5rem)] text-[#3c3c3c] mb-10 font-light'>Evaluate books that are similar to yours in genre, format, trim size, and page count—how much do they cost?
         </p>
-        <p className='text-[clamp(1rem,2.5vw,1rem)] sm:font-semibold text-[#3c3c3c] mb-10 '>Visit your local bookstore and scan the shelves to find out, then make your book price similar. If most of the books in your genre are 6x9 paperbacks printed in black-and-white, then you might not need to spend extra money printing with premium color or in an unusual trim size.
+        <p className='text-[1rem] sm:font-semibold text-[#3c3c3c] mb-10 '>Visit your local bookstore and scan the shelves to find out, then make your book price similar. If most of the books in your genre are 6x9 paperbacks printed in black-and-white, then you might not need to spend extra money printing with premium color or in an unusual trim size.
         </p>
         {/* second section */}
         <h2 className="text-[clamp(24px,4vw,32px)] text-[#4e9eb8] font-bold mb-4 border-l-4 border-[#ffca38] pl-4">
@@ -33,7 +33,7 @@ const PricingYourBook = () => {
         <ul className='space-y-3'>
           {secondSectionList.map((item, index) => {
             return (
-              <li key={index} className='text-[clamp(1rem,2.5vw,1rem)] sm:font-semibold text-[#3c3c3c]' >{item}</li>)
+              <li key={index} className='text-[1rem] sm:font-semibold text-[#3c3c3c]' >{item}</li>)
           })}
         </ul>
       </div>

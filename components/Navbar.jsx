@@ -41,9 +41,11 @@ const Navbar = () => {
         <div className='relative flex lg:flex-col px-5 lg:px-0 w-full mx-auto'>
             <div className='bg-white w-full flex justify-center h-[70px]'>
                 <div className='flex justify-between items-center lg:max-w-[76vw] w-full h-full'>
-                    <div className='relative w-[250px] h-11'>
-                        <Image src='/IngramLogo.png' alt='logo' fill sizes="(max-width: 768px), 50vw, 200px" className='object-contain' />
-                    </div>
+                    <Link href={"/"}>
+                        <div className='relative w-[250px] h-11'>
+                            <Image src='/IngramLogo.png' alt='logo' fill sizes="(max-width: 768px), 50vw, 200px" className='object-contain' />
+                        </div>
+                    </Link>
                     {/* links */}
                     <ul className='hidden lg:flex gap-4 text-[14px] font-normal font-[sans-serif]'>
                         <Link href="/create-account" className='text-[#3a7c92]'>Create Account</Link>

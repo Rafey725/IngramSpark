@@ -122,14 +122,14 @@ const CreateAccountComp = () => {
                 Create Account
               </button>
             </form>
-            <p className='text-xs text-center'>Already have an account? {" "}
+            <p className='text-xs text-center text-[#535a62]'>Already have an account? {" "}
               <Link href="/login" className="text-[#3a7c92] hover:text-[#244e5b] hover:underline ">Login</Link>
             </p>
           </div>
 
         </div>
 
-        <footer className='w-full text-xs text-black text-center md:text-[#969696] py-2 px-3 flex flex-col items-center justify-center border-t border-gray-200'>
+        <footer className='w-full text-xs text-black text-center text-white md:text-[#969696] py-2 px-3 flex flex-col items-center justify-center border-t border-gray-200'>
           <p>© Copyright 2025 Lightning Source LLC. All Rights Reserved.
           </p>
           <div className='space-x-3'>
@@ -139,8 +139,8 @@ const CreateAccountComp = () => {
         </footer>
       </div>
       {/* right side */}
-      <div className='hidden md:flex w-[58.5%] h-screen bg-[url(/createaccount-bg.jpg)] bg-center bg-cover bg-no-repeat text-white items-center'>
-        <div className='max-w-196 space-y-6 px-5 lg:px-15 xl:px-23'>
+      <div className='hidden md:flex w-[58.5%] h-screen bg-[url(/createaccount-bg.jpg)] bg-center bg-cover bg-no-repeat text-white pt-45'>
+        <div className='max-w-245 space-y-6 px-5 lg:px-15 xl:px-23'>
           <h1 className='text-[44px] font-bold leading-12'>
             Why IngramPublishers?
           </h1>
